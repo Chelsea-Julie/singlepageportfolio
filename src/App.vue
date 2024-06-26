@@ -15,7 +15,13 @@ import Footer from '@/components/Footer.vue'
 export default {
   components : {
     NavBar, Footer
-  }
+  },
+  computed : {
+    jobTitle() {
+      return this.$store.getters.jobTitle
+    }
+  },
+  mounted () { this.$store.dispatch("fetchProducts"); }
 } 
 </script>
 
