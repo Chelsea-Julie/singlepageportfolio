@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrapper">
     <NavBar />
     <main class="container-fluid">
       <router-view/>
@@ -16,7 +16,7 @@ export default {
   components : {
     NavBar, Footer
   }
-}
+} 
 </script>
 
 <style src="./assets/CSS/style.css" >
