@@ -1,6 +1,6 @@
 import { createStore } from 'vuex'
 import axios from 'axios'
-const portfolioURL = " https://chelsea-julie.github.io/vueEOMP/data"
+const portfolioURL = "https://awhendr261101.github.io/vueMockEOMP/data/resources.json"
 import swal from 'sweetalert2/dist/sweetalert2'
 export default createStore({
   state: {
@@ -38,113 +38,104 @@ export default createStore({
     }
   },
   actions: {
-    async fetchJobTitle(context) {
+
+    async fetchJobtitle(context) { 
       try {
-
-        let {jobtitle} = (await axios.get(portfolioURL)).data
-        context.commit('setJobtitle', jobtitle)
-      } catch (e) { 
-        swal.fire({
-         title: "Error",
-         text:"Fail to fetch job title",
-         icon:"error",
-         timer: 2000
-        })
-      }
-
-    },
-    async fetchAbout(context) {
-      try {
-
-        let {about} = (await axios.get(portfolioURL)).data
-        context.commit('setAbout', about)
-      } catch (e) { 
-        swal.fire({
-         title: "Error",
-         text:"Fail to fetch about",
-         icon:"error",
-         timer: 2000
-        })
-      }
-
-    },
-    async fetchEducation(context) {
-      try {
-
-        let {education} = (await axios.get(portfolioURL)).data
-        context.commit('setEducation', education)
-      } catch (e) { 
-        swal.fire({
-         title: "Error",
-         text:"Fail to fetch education",
-         icon:"error",
-         timer: 2000
-        })
-      }
-
-    },
-    async fetchExperience(context) {
-      try {
-
-        let {experience} = (await axios.get(portfolioURL)).data
-        context.commit('setExperience', experience)
-      } catch (e) { 
-        swal.fire({
-         title: "Error",
-         text:"Fail to fetch experience",
-         icon:"error",
-         timer: 2000
-        })
-      }
-
-    },
-    async fetchProjects(context) {
-      try {
-
-        let {projects} = (await axios.get(portfolioURL)).data
-        context.commit('setProjects', projects)
-      } catch (e) { 
-        swal.fire({
-         title: "Error",
-         text:"Fail to fetch projects",
-         icon:"error",
-         timer: 2000
-        })
-      }
-
-    },
-    async fetchTestimonials(context) {
-      try {
-
-        let {testimonials} = (await axios.get(portfolioURL)).data
-        context.commit('setTestimonials', testimonials)
-      } catch (e) { 
-        swal.fire({
-         title: "Error",
-         text:"Fail to fetch testimonials",
-         icon:"error",
-         timer: 2000
-        })
-      }
-
-    },
-    async fetchSkills(context) {
-      try {
-
-        let {skills} = (await axios.get(portfolioURL)).data
-        context.commit('setSkills', skills)
-      } catch (e) { 
-        swal.fire({
-         title: "Error",
-         text:"Fail to fetch skills",
-         icon:"error",
-         timer: 2000
-        })
-      }
-
+        let res = await (await axios.get(portfolioURL)).data  
+        // let {jobTitle} = await (await axios.get(portfolioURL)).data
+        context.commit("setJobtitle", res.jobTitle)
+        console.log(res.jobTitle);
+      } catch(e) {
+      swal.fire ({
+        title: "Error",
+        text: "Unable  to fetch job title",
+        icon: "error",
+        timer: 2000,
+      })
     }
-
-  },
+    },
+    async fetchAbout(context) { 
+      try {
+        let res = await (await axios.get(portfolioURL)).data  
+        // let {jobTitle} = await (await axios.get(portfolioURL)).data
+        context.commit("setAbout", res.About)
+        console.log(res.About);
+      } catch(e) {
+      swal.fire ({
+        title: "Error",
+        text: "Unable  to fetch job title",
+        icon: "error",
+        timer: 2000,
+      })
+    }
+    },
+    
+    // async fetchEducation(context) { 
+    //   try {  
+    //     let {education} = await (await axios.get(portfolioURL)).data
+    //     context.commit("seteducation", education)
+    //   } catch(e) {
+    //   swal.fire ({
+    //     title: "Error",
+    //     text: "Unable  to fetch job title",
+    //     icon: "error",
+    //     timer: 2000,
+    //   })
+    // }
+    // },
+    // async fetchExperience(context) { 
+    //   try {  
+    //     let {experience} = await (await axios.get(portfolioURL)).data
+    //     context.commit("setexperience", experience)
+    //   } catch(e) {
+    //   swal.fire ({
+    //     title: "Error",
+    //     text: "Unable  to fetch job title",
+    //     icon: "error",
+    //     timer: 2000,
+    //   })
+    // }
+    // },
+    // async fetchSkills(context) { 
+    //   try {  
+    //     let {skills} = await (await axios.get(portfolioURL)).data
+    //     context.commit("setskills", skills)
+    //   } catch(e) {
+    //   swal.fire ({
+    //     title: "Error",
+    //     text: "Unable  to fetch job title",
+    //     icon: "error",
+    //     timer: 2000,
+    //   })
+    // }
+    // },
+    // async fetchTestimonials(context) { 
+    //   try {  
+    //     let {testimonials} = await (await axios.get(portfolioURL)).data
+    //     context.commit("settestimonials", testimonials)
+    //   } catch(e) {
+    //   swal.fire ({
+    //     title: "Error",
+    //     text: "Unable  to fetch job title",
+    //     icon: "error",
+    //     timer: 2000,
+    //   })
+    // }
+    // },
+    // async fetchProject(context) { 
+    //   try {  
+    //     let {project} = await (await axios.get(portfolioURL)).data
+    //     context.commit("setproject", project)
+    //   } catch(e) {
+    //   swal.fire ({
+    //     title: "Error",
+    //     text: "Unable  to fetch job title",
+    //     icon: "error",
+    //     timer: 2000,
+    //   })
+    // }
+    // }
+    },
   modules: {
   },
 

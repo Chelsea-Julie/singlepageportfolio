@@ -18,10 +18,10 @@ export default {
   },
   computed : {
     jobTitle() {
-      return this.$store.getters.jobTitle
+      return this.$store.state.jobtitle
     }
   },
-  mounted () { this.$store.dispatch("fetchProducts"); }
+ 
 } 
 </script>
 

@@ -39,6 +39,10 @@ img{
 img[alt="logo"] {
     width: 5rem;
 }
+
+img[me]{
+    width: 40rem;
+}
 /* wrapper */
 :is(.wrapper) {
     display: grid;
