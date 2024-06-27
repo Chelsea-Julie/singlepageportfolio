@@ -1,8 +1,8 @@
 <template>
     <div class="container vh-100">
-        <h1>About</h1>
+        <h1>education</h1>
         <div class="row" v-if="true">
-            <p>{{ about }}</p>
+            <p>{{ education }}</p>
         </div>
         <div v-else class="row">
             <Spinner />
@@ -14,14 +14,15 @@
   import {computed, onMounted } from 'vue'
   import {useStore} from 'vuex'
   import Spinner from '@/components/Spinner.vue'
+  
 
-    const about = computed(() => store.state.about)
+    const education = computed(() => store.state.education)
     const store = useStore()
 
   
     onMounted(() => {
-      console.log(about);
-          store.dispatch('fetchAbout')
+      console.log(education);
+          store.dispatch('fetchEducation')
 
       })
   

@@ -69,6 +69,21 @@ export default createStore({
       })
     }
     },
+    async fetchEducation(context) { 
+      try {
+        let res = await (await axios.get(portfolioURL)).data  
+        // let {jobTitle} = await (await axios.get(portfolioURL)).data
+        context.commit("setEducation", res.education)
+        console.log(res.education);
+      } catch(e) {
+      swal.fire ({
+        title: "Error",
+        text: "Unable  to fetch job title",
+        icon: "error",
+        timer: 2000,
+      })
+    }
+    },
     
     // async fetchEducation(context) { 
     //   try {  
