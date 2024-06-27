@@ -49,3 +49,7 @@ img[me]{
     grid-template-rows: auto minmax(100dvh, 100%) auto;
 }
 
+section{
+  scroll-margin-block: 5rem;
+}
+
